@@ -35,7 +35,11 @@ class AuthenticationScreen extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 50),
-                child: Image.asset(fireClockImage, color: customYellow),
+                child: Image.asset(
+                  fireClockImage,
+                  color: customYellow,
+                  height: 180,
+                ),
               ),
               Expanded(child: Container()),
               CustomFilledButton(

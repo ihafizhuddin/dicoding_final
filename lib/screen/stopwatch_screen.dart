@@ -4,7 +4,6 @@ import 'package:dicoding_final_timer/component/view_component.dart';
 import 'package:dicoding_final_timer/style.dart';
 import 'package:dicoding_final_timer/util/stopwatch_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class StopwatchScreen extends StatelessWidget {
   const StopwatchScreen({super.key});
@@ -77,6 +76,8 @@ class _StopwatchBodyState extends State<StopwatchBody> {
     var minuteColor = stopwatch.elapsed.inMinutes > 0 ? customYellow : customGrey;
     var secondColor = stopwatch.elapsed.inSeconds > 0 ? Colors.white : customGrey;
     return Column(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
         CustomStopwatchText(
           timeText: hourText,

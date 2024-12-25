@@ -187,6 +187,8 @@ class CustomStopwatchText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    var height = screenSize.height;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       textBaseline: TextBaseline.alphabetic,
@@ -196,7 +198,7 @@ class CustomStopwatchText extends StatelessWidget {
           '$timeText',
           style: GoogleFonts.roboto(
             color: timeTextColor,
-            fontSize: 150,
+            fontSize: height > 800 ? 160 : 120,
           ),
         ),
         Text(

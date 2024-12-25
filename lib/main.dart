@@ -14,6 +14,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    print('current screen height is : ${screenSize.height}');
+    print('current screen width is : ${screenSize.width}');
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: MaterialApp(
