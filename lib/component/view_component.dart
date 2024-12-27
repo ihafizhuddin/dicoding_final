@@ -198,7 +198,7 @@ class CustomStopwatchText extends StatelessWidget {
           '$timeText',
           style: GoogleFonts.roboto(
             color: timeTextColor,
-            fontSize: height > 800 ? 160 : 120,
+            fontSize: height > 800 ? 150 : 120,
           ),
         ),
         Text(

@@ -75,54 +75,56 @@ class _StopwatchBodyState extends State<StopwatchBody> {
     var hourColor = stopwatch.elapsed.inHours > 0 ? Colors.white.withOpacity(0.8) : customGrey;
     var minuteColor = stopwatch.elapsed.inMinutes > 0 ? customYellow : customGrey;
     var secondColor = stopwatch.elapsed.inSeconds > 0 ? Colors.white : customGrey;
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        CustomStopwatchText(
-          timeText: hourText,
-          timeTextColor: hourColor,
-          timeTypeText: 'h',
-        ),
-        //minute
-        CustomStopwatchText(
-          timeText: minuteText,
-          timeTextColor: minuteColor,
-          timeTypeText: 'm',
-        ),
-        //second
-        CustomStopwatchText(
-          timeText: secondText,
-          timeTextColor: secondColor,
-          timeTypeText: 's',
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CustomSquareBorderButton(
-              icon: stopwatchState == StopwatchState.started ? Icons.add : Icons.refresh,
-              function: stopwatchState == StopwatchState.started
-                  ? () {}
-                  : () {
-                      resetStopwatch();
-                    },
-            ),
-            SizedBox(
-              width: 8,
-            ),
-            CustomSquareButton(
-              icon: stopwatchState == StopwatchState.started ? Icons.pause : Icons.play_arrow,
-              function: stopwatchState == StopwatchState.started
-                  ? () {
-                      pauseStopwatch();
-                    }
-                  : () {
-                      startStopwatch();
-                    },
-            ),
-          ],
-        )
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          CustomStopwatchText(
+            timeText: hourText,
+            timeTextColor: hourColor,
+            timeTypeText: 'h',
+          ),
+          //minute
+          CustomStopwatchText(
+            timeText: minuteText,
+            timeTextColor: minuteColor,
+            timeTypeText: 'm',
+          ),
+          //second
+          CustomStopwatchText(
+            timeText: secondText,
+            timeTextColor: secondColor,
+            timeTypeText: 's',
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomSquareBorderButton(
+                icon: stopwatchState == StopwatchState.started ? Icons.add : Icons.refresh,
+                function: stopwatchState == StopwatchState.started
+                    ? () {}
+                    : () {
+                        resetStopwatch();
+                      },
+              ),
+              SizedBox(
+                width: 8,
+              ),
+              CustomSquareButton(
+                icon: stopwatchState == StopwatchState.started ? Icons.pause : Icons.play_arrow,
+                function: stopwatchState == StopwatchState.started
+                    ? () {
+                        pauseStopwatch();
+                      }
+                    : () {
+                        startStopwatch();
+                      },
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
